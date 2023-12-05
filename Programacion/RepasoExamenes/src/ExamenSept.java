@@ -32,7 +32,17 @@ public class ExamenSept {
 		} catch (IOException ex) {
 			ex.toString();
 		}
+		//Ordenar por población creciente:
 		Collections.sort(listaMunicipios);
+		//Ordenar por población decreciente:
+		Collections.sort(listaMunicipios,Collections.reverseOrder());
+		//Ordenar alfabeticamente A-Z
+		Collections.sort(listaMunicipios,new ComparatorNombre());
+		
+		//ordenados A-Z por provincia y si son de la misma provincia
+		//ordenamos por nombre
+		ComparatorProvincia cp=new ComparatorProvincia();
+		Collections.sort(listaMunicipios,cp.thenComparing(new ComparatorNombre()));
 		
 		for (Municipio pueblo:listaMunicipios) {
 			System.out.println(pueblo);

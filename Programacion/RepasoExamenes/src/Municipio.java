@@ -41,6 +41,7 @@ public String toString() {
             '}';
 }
 @Override
+//Este método me sirve para ordenar por población creciente
 public int compareTo(Municipio otroMunicipio) {
 	return this.poblacion-otroMunicipio.poblacion;
 }
